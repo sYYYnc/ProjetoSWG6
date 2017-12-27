@@ -1,0 +1,105 @@
+﻿@model ProjetoG6.Models.Candidatos
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+
+@if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
+{
+    if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">
+            <h2>
+                <strong>Sucesso...</strong>
+            </h2>
+            <h3>
+                @ViewBag.Message
+            </h3>
+        </div>
+    }
+}
+else
+{
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Novo Registo</h2>
+            <form asp-action="Register">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Nome" class="control-label"></label>
+                    <input asp-for="Nome" class="form-control" id="textNome" title="@ViewData["HelpNome"]" data-toggle="tooltip"/>
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" id="textEmail" title="@ViewData["HelpEmail"]" data-toggle="tooltip"/>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DataNascimento" class="control-label"></label>
+                    <input asp-for="DataNascimento" class="form-control" id="textDataNascimento" title="@ViewData["HelpDataNascimento"]" data-toggle="tooltip"/>
+                    <span asp-validation-for="DataNascimento" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NumeroAluno" class="control-label"></label>
+                    <input asp-for="NumeroAluno" class="form-control" id="textNumeroAluno" title="@ViewData["HelpNumeroAluno"]" data-toggle="tooltip"/>
+                    <span asp-validation-for="NumeroAluno" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" id="textPassword" title="@ViewData["HelpPassword"]" data-toggle="tooltip"/>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PasswordConfirmacao" class="control-label"></label>
+                    <input asp-for="PasswordConfirmacao" class="form-control" id="textPassConf" title="@ViewData["HelpPasswordConf"]" data-toggle="tooltip"/>
+                    <span asp-validation-for="PasswordConfirmacao" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Novo Registo" class="btn btn-default" />
+                </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                <script type="text/javascript">
+                        $(document).ready(function () {
+                            $('#textEmail').tooltip()
+                        });
+                        $(document).ready(function () {
+                            $('#textPassword').tooltip()
+                        });
+                        $(document).ready(function () {
+                            $('#textPassConf').tooltip()
+                        });
+                        $(document).ready(function () {
+                            $('#textNome').tooltip()
+                        });
+                        $(document).ready(function () {
+                            $('#textNumeroAluno').tooltip()
+                        });
+                        $(document).ready(function () {
+                            $('#textDataNascimento').tooltip()
+                        });
+                </script>
+            </form>
+        </div>
+    </div>
+    if (ViewBag.Message != null)
+    {
+        <div class="alert alert-danger">
+            <h2>
+                <strong>Erro...</strong>
+            </h2>
+            <h3>
+                @ViewBag.Message
+            </h3>
+        </div>
+    }
+}
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

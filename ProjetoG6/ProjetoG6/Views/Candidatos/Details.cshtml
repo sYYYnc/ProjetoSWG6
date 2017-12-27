@@ -1,0 +1,47 @@
+﻿@model ProjetoG6.Models.Candidatos
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div>
+    <h3>Dados utilizador</h3>
+    <hr />
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DataNascimento)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NumeroAluno)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NumeroAluno)
+            </dd>
+            <!--Mostra o nome da candidatura que Escolheu-->
+            <hr />
+            <h3>Dados Candidatura</h3>
+            <br />
+            <dt>
+                @Html.DisplayNameFor(model => model.CandidaturaID)
+            </dt>
+            <dd>
+                @ViewBag.Message
+            </dd>
+        </dl>     
+</div>

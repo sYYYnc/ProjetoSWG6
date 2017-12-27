@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ProjetoG6.Models.AccountViewModels.Help>
+
+@{
+    ViewData["Title"] = "Help";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Está com dificuldades de navegação? Aqui explicamos-lhe tudo!</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+               
+                <th>
+                    @Html.DisplayNameFor(model => model.Descricao)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

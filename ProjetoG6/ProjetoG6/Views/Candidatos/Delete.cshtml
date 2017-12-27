@@ -1,0 +1,75 @@
+﻿@model ProjetoG6.Models.Candidatos
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Candidatos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroAluno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumeroAluno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PasswordConfirmacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PasswordConfirmacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BolsaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BolsaID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CandidaturaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CandidaturaID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EntervistaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EntervistaID)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CandidatoID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
